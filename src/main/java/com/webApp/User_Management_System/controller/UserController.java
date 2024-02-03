@@ -3,6 +3,7 @@ package com.webApp.User_Management_System.controller;
 import com.webApp.User_Management_System.model.User;
 import com.webApp.User_Management_System.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,6 +32,7 @@ public class UserController {
     }
 
     @PostMapping("/add")
+    @ResponseStatus(HttpStatus.CREATED)
     void addUser(@RequestBody User user) {
         userService.addUser(user);
     }

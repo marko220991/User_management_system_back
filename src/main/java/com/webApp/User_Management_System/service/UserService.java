@@ -31,7 +31,6 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-
     public void addUser(User user) {
         userRepository.save(user);
     }
